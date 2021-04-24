@@ -30,9 +30,9 @@ The heuristic was given as follows:
 
 To emulate this know only first_week_stocked, last_week_stocked, num_weeks_stocked for a given store-product pair:
 1. We know a product is neither OUT_OF_STOCK nor REMOVED if it is in stock every week from it's first_week_stocked until the END_WEEK. aka:
-    num_weeks_stocked === (END_WEEK - first_week_stocked + 1)
+    - num_weeks_stocked === (END_WEEK - first_week_stocked + 1)
 2. Otherwise, we know a product is OUT_OF_STOCK if 
-    num_weeks_stocked === (last_week_stocked - first_week_stocked + 1)
+    - num_weeks_stocked === (last_week_stocked - first_week_stocked + 1)
 3. Otherwise, the product was REMOVED.
 
 ## Program Efficiency
