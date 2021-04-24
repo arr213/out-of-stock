@@ -1,12 +1,12 @@
 {
-  "name": "datasembly",
+  "name": "Out-of-Stock",
   "version": "1.0.0",
-  "description": "",
+  "description": "Assessment submission for Adam Reid",
   "main": "source/index.js",
   "scripts": {
-    "test": "node tests/test"
+    "test": "mocha tests/test"
   },
-  "author": "",
+  "author": "Adam Reid",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.3.4",

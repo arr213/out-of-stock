@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const {classifyMissingProducts, buildStockHistoryRef} = require('./utils');
+const { classifyMissingProducts } = require('./classifyMissingProducts');
 const { 
     START_WEEK, 
     END_WEEK,
@@ -8,8 +8,9 @@ const {
 } = process.env;
 
 (function(){
+    console.log(`Classify missing products from ${INPUT_PATH}, between weeks ${START_WEEK} and ${END_WEEK}...`)
     console.log('Reading input file...');
-    const data = fs.readFileSync(INPUT_PATH, "utf8").split('\n').map(r => r.split(','));
+    const data = fs.readFileSync(INPUT_PATH, "utf8").split('\n');
     console.log('Processing data...');
     let missingProductList = classifyMissingProducts(data, Number(START_WEEK), Number(END_WEEK));
     console.log('Writing output file...');

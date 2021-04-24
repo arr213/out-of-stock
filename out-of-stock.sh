@@ -2,6 +2,7 @@
 
 # Sample usage in terminal:
 # `./out-of-stock.sh --input path/to/input.csv --start 202103 --end 202106`
+
 INPUT_PATH=""
 START_WEEK=""
 END_WEEK=""
@@ -27,9 +28,9 @@ do
     esac
 done
 
-export INPUT_PATH=$(echo $INPUT_PATH)
-export START_WEEK=$(echo $START_WEEK)
-export END_WEEK=$(echo $END_WEEK)
+export INPUT_PATH
+export START_WEEK
+export END_WEEK
 
 node ./source/index
 
