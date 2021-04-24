@@ -22,9 +22,8 @@ The START_WEEK and END_WEEK should be in the format `YYYYWW` (4-digit year follo
 3)  The NodeJS script keeps a data structure in memory recording necessary information for determining whether each item is out of stock. This helps to speed up the script by only reading through the file 1 time. For much larger text files this may not be possible as it may exceed the default maximum heap size in NodeJS of 700MB.  If this is the case, see proposals for version-2 of this below.
 
 ## Program efficiency
-O(n) time complexity where n=num_lines_of_input
-O(s * p) space complexity where s=num_stores & p=max_num_products_per_store
+- O(n) time complexity where n=num_lines_of_input
+- O(s * p) space complexity where s=num_stores & p=max_num_products_per_store
 
 ## V2 Notes
-If the size of input files causes the data structure to exceed the maximum heap size.  If recommend the following updates to the program to improve space complexity.
-    1) Read the input-file via a NodeJS read-stream, copying lines of the input file to a separate file for each store_id.  The program will then be able to operate on each of these files one at a time to avoid breaking memory limits. Writing to each of these files would also be done via NodeJS write-stream.
+If the size of input files causes the data structure to exceed the maximum heap size.  If recommend the following updates to the program to improve space complexity. Read the input-file via a NodeJS read-stream, copying lines of the input file to a separate file for each store_id.  The program will then be able to operate on each of these files one at a time to avoid breaking memory limits. Writing to each of these files would also be done via NodeJS write-stream as well as writing the output-file.
