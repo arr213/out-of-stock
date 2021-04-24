@@ -4,13 +4,13 @@ const fs = require('fs');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
-const { buildStockHistoryRef, classifyMissingProducts } = require('../source/utils');
+const { buildStockHistoryRef, classifyMissingProducts } = require('../source/classifyMissingProducts');
 const testData = require('./test_data');
 
 describe('Out-Of-Stock', function(){
 
     describe('Unit Tests', function() {
-        describe('buildStockHistoryRef: helper function to build ', function() {
+        describe('buildStockHistoryRef: (helper function)', function() {
             it('is a function', function() {
                 expect(buildStockHistoryRef).to.be.a('function');
             });
@@ -59,7 +59,6 @@ describe('Out-Of-Stock', function(){
                 if (stderr) throw stderr;
                 let file = fs.readFileSync('./tests/test_inputs_missing_products.csv', 'utf-8');
                 expect(file).to.eql(testData.expectedProducts3.join('\n'));
-                console.log('ok');
             });
         });
 

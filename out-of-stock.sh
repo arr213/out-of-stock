@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Executable file for invoking NodeJS script with CLI arguments and flags
+
 # Sample usage in terminal:
 # `./out-of-stock.sh --input path/to/input.csv --start 202103 --end 202106`
 

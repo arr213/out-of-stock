@@ -1,5 +1,4 @@
 const fs = require('fs');
-
 const { classifyMissingProducts } = require('./classifyMissingProducts');
 const { 
     START_WEEK, 
